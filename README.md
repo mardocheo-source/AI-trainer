@@ -2,6 +2,8 @@
 
 A Python research toolkit for parameter-efficient training and evaluation of agentic language models, with support for Intel XPU and CPU diagnostics.
 
+**Research use only.** This is an experimental research project intended for exploration and evaluation. It is not intended for real-world deployment or production use.
+
 This repository is the public-source edition of a private research project. It includes the application code, an isolated BFCL adapter, small synthetic examples and automated tests. Private datasets, model weights, checkpoints, unbundled historical campaigns, experiment reports and the original Git history are intentionally excluded. Unit tests do not establish model quality or reproduce past research scores.
 
 ## Installation
