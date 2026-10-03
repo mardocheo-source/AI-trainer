@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "exotic-agent-trainer"
+version = "0.1.0"
+description = "Local, XPU-first parameter-efficient trainer for agentic coding LLMs"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+  "pydantic==2.13.4",
+  "PyYAML==6.0.3",
+  "rich==14.3.4",
+  "typer==0.27.1",
+  "python-dotenv>=1.0.1,<2",
+]
+
+[project.optional-dependencies]
+train = [
+  "accelerate==1.14.0",
+  "datasets==4.8.5",
+  "fastapi==0.141.1",
+  "numpy==2.5.2",
+  "peft==0.20.0",
+  "psutil==7.2.2",
+  "safetensors==0.8.0",
+  "transformers==5.14.1",
+  "trl==0.29.1",
+  "uvicorn==0.52.1",
+  "matplotlib>=3.9,<4",
+]
+gui = ["gradio==6.22.0"]
+dev = ["pytest==9.1.1", "ruff==0.16.2", "openai>=1.86.0,<3"]
+xpu-quant = ["bitsandbytes>=0.47,<1"]
+
+[project.scripts]
+exotic-trainer = "exotic_trainer.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/exotic_trainer"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+ignore = ["B008"] # Typer's documented declaration pattern uses Option() defaults.

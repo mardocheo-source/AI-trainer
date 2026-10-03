@@ -1,0 +1,6 @@
+{"instruction": "Reply with the word ready.", "output": "ready"}
+{"instruction": "Return the integer two.", "output": "2"}
+{"instruction": "Write the word hello.", "output": "hello"}
+{"instruction": "Return the boolean true.", "output": "true"}
+{"instruction": "Reply with the word done.", "output": "done"}
+{"instruction": "Return the integer one.", "output": "1"}
